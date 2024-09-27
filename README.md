@@ -123,7 +123,7 @@ Though the sample names file can be omitted, in which case the samples will be l
 
 Below is an example of the formatting for gene expression (we only show a small portion of the matrix):
 
-.. image:: images/input_ex.png
+![Compass Output](docs/images/input_ex.png)
 
 For the first run of Compass on a given model and media there will be overhead building up the Compass cache. 
 Compass will automatically build up the cache if it is empty, but you can also manually build up the cache 
