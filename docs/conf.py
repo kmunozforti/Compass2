@@ -36,8 +36,8 @@ needs_sphinx = "4.0"
 
 html_context = {
     "display_github": True,  # Integrate GitHub
-    "github_user": "YosefLab",
-    "github_repo": "https://github.com/YosefLab/Compass",
+    "github_user": "WagnerLab",
+    "github_repo": "https://github.com/wagnerlab-berkeley/Compass",
     "github_version": "main",
     "conf_py_path": "/docs/",
 }

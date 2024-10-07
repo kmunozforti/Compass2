@@ -163,13 +163,13 @@ Refer to [this page][link-postprocessing] of the documentation for an example no
 
 
 
-[link-docs]: https://compass-sc.readthedocs.io/en/latest/
+[link-docs]: https://compass-wagnerlab.readthedocs.io/en/latest/
 [link-manuscript]: https://doi.org/10.1016/j.cell.2021.05.045
 [link-gurobi]: https://support.gurobi.com/hc/en-us/articles/13232844297489-How-do-I-set-up-a-Web-License-Service-WLS-license
-[link-quickstart]: https://compass-sc.readthedocs.io/en/latest/quickstart.html
+[link-quickstart]: https://compass-wagnerlab.readthedocs.io/en/latest/quickstart.html
 [link-testdata]: https://github.com/wagnerlab-berkeley/Compass/tree/master/compass/Resources/Test-Data
-[link-settings]: https://compass-sc.readthedocs.io/en/latest/settings.html
+[link-settings]: https://compass-wagnerlab.readthedocs.io/en/latest/settings.html
 [link-virtualmetabolichuman]: https://www.vmh.life/#home
 [link-resourcesdir]: https://github.com/wagnerlab-berkeley/Compass/tree/master/compass/Resources/Recon2_export
 [link-metabatlas]: https://metabolicatlas.org/
-[link-postprocessing]: https://compass-sc.readthedocs.io/en/latest/notebooks/postprocessing.html
+[link-postprocessing]: https://compass-wagnerlab.readthedocs.io/en/latest/notebooks/postprocessing.html

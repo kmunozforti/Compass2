@@ -51,7 +51,7 @@ here is a set of recommended parameters if you would still like to speed up your
 **\-\-turbo-max-iters 1**
 
 This set of parameters is chosen based on experiments conducted on the `Th17 dataset 
-<https://github.com/YosefLab/Compass/blob/compass_v2/docs/notebooks/extdata/Th17/linear_gene_expression_matrix.tsv>`__ 
+<https://github.com/wagnerlab-berkeley/Compass/blob/master/docs/notebooks/extdata/Th17/linear_gene_expression_matrix.tsv>`__ 
 which contains 290 samples. The runtime and accuracy of various Turbo-Compass parameters are shown here:
 
 .. image:: images/th17_runtime.png
@@ -72,7 +72,7 @@ The recommended set of parameters to use is:
 **\-\-turbo-max-iters 1**
 
 This set of parameters is chosen based on experiments conducted on the `glucose dataset 
-<https://github.com/YosefLab/Compass/blob/compass_v2/docs/notebooks/extdata/glucose/normalized_expression.tsv>`__ 
+<https://github.com/wagnerlab-berkeley/Compass/blob/master/docs/notebooks/extdata/glucose/normalized_expression.tsv>`__ 
 which contains around 5,000 samples. The runtime and accuracy of various Turbo-Compass parameters are shown here:
 
 .. image:: images/glucose_runtime.png
@@ -89,7 +89,7 @@ For large-scale datasets, we suggest that the user perform **pseudobulking**, i.
 from a group of cells with shared characteristics, such as cells from the same patient, replicate, cell type, etc.,
 on the dataset before proceeding to use Compass. Although this process is highly dependent on the experiments 
 performed to generate the dataset, we provide a `tutorial on pseudobulking 
-<https://compass-sc.readthedocs.io/en/latest/notebooks/pseudobulk.html>`__ 
+<https://compass-wagnerlab.readthedocs.io/en/latest/notebooks/pseudobulk.html>`__ 
 as reference.
 
 We experimented with some Turbo-Compass parameters for the IBD dataset used in the pseudobulking tutorial. The runtime and 

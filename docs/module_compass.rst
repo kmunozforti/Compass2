@@ -44,19 +44,19 @@ Note that the meta-subsystem IDs should not contain spaces. Also note that the s
 should be separated by semicolons.
 
 If you are using Human1, a list of subsystems supported by Module-Compass can be found 
-`here <https://github.com/YosefLab/Compass/blob/compass_v2/compass/Resources/Metabolic%20Models/Human1/core_reactions_subsystems.txt>`__.
+`here <https://github.com/wagnerlab-berkeley/Compass/blob/master/compass/Resources/Metabolic%20Models/Human1/core_reactions_subsystems.txt>`__.
 A list of reactions supported by Module-Compass can be found
-`here <https://github.com/YosefLab/Compass/blob/compass_v2/compass/Resources/Metabolic%20Models/Human1/core_reactions_md.csv>`__.
+`here <https://github.com/wagnerlab-berkeley/Compass/blob/master/compass/Resources/Metabolic%20Models/Human1/core_reactions_md.csv>`__.
 
 If you are using Mouse1, a list of subsystems supported by Module-Compass can be found 
-`here <https://github.com/YosefLab/Compass/blob/compass_v2/compass/Resources/Metabolic%20Models/Mouse1/core_reactions_subsystems.txt>`__.
+`here <https://github.com/wagnerlab-berkeley/Compass/blob/master/compass/Resources/Metabolic%20Models/Mouse1/core_reactions_subsystems.txt>`__.
 A list of reactions supported by Module-Compass can be found
-`here <https://github.com/YosefLab/Compass/blob/compass_v2/compass/Resources/Metabolic%20Models/Mouse1/core_reactions_md.csv>`__.
+`here <https://github.com/wagnerlab-berkeley/Compass/blob/master/compass/Resources/Metabolic%20Models/Mouse1/core_reactions_md.csv>`__.
 
 If you are using RECON2, a list of subsystems supported by Module-Compass can be found 
-`here <https://github.com/YosefLab/Compass/blob/compass_v2/compass/Resources/Metabolic%20Models/RECON2_mat/model/core_reactions_subsystems.txt>`__.
+`here <https://github.com/wagnerlab-berkeley/Compass/blob/master/compass/Resources/Metabolic%20Models/RECON2_mat/model/core_reactions_subsystems.txt>`__.
 A list of reactions supported by Module-Compass can be found
-`here <https://github.com/YosefLab/Compass/blob/compass_v2/compass/Resources/Metabolic%20Models/RECON2_mat/model/core_reactions_md.csv>`__.
+`here <https://github.com/wagnerlab-berkeley/Compass/blob/master/compass/Resources/Metabolic%20Models/RECON2_mat/model/core_reactions_md.csv>`__.
 
 
 Module-Compass Output
@@ -92,7 +92,7 @@ detailed treatment of the inner workings of Compass.
 ``meta_subsystem_models`` contains the reactions directly associated with the meta-subsystem, their one-hop neighbors, and 
 relevant exchange reactions. The format may differ between various choices of metabolic model (e.g. RECON2 or Human1), 
 but should be similar to the corresponding comprehensive model under the 
-`Metabolic Models <https://github.com/YosefLab/Compass/blob/compass_v2/compass/Resources/Metabolic%20Models>`__
+`Metabolic Models <https://github.com/wagnerlab-berkeley/Compass/blob/master/compass/Resources/Metabolic%20Models>`__
 directory.
 
 An example ``reactions.tsv`` output file is shown below:

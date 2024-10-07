@@ -30,15 +30,11 @@ This needs to be installed before the other requirements because a C extension n
    It is otherwise identical to just using pip. Using sudo can also invoke a different version of python 
    depending on your environment.
 
-.. warning::
-
-   Installing from the ``compass_v2`` branch is temporary and will be fixed as all changes are merged into ``master``.
-
 Then simplest way to install Compass is using pip to install from the github repository. This can be done with the following command in the terminal:
 
 .. code:: bash
 
-   python -m pip install git+https://github.com/yoseflab/Compass.git@compass_v2 --upgrade
+   python -m pip install git+https://github.com/wagnerlab-berkeley/Compass.git --upgrade
 
 This command will also update Compass to the newest version. Alternatively, you can clone the Compass repository and run setup.py.
 
@@ -75,4 +71,4 @@ where ``<PATH_TO_LICENSE>`` is the path to the ``gurobi.lic`` file you obtained 
 This stores your license information in a default location within Compass. 
 After you have successfully done so, you can proceed to run Compass without the ``--set-license`` parameter 
 as Compass will directly read your license information from the default location.
-Refer to the `next section <https://compass-sc.readthedocs.io/en/latest/quickstart.html>`__ of the documentation to learn how to run Compass.
+Refer to the `next section <https://compass-wagnerlab.readthedocs.io/en/latest/quickstart.html>`__ of the documentation to learn how to run Compass.

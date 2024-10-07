@@ -27,7 +27,7 @@ Example Input
 --------------
 
 You can find example inputs in tab-delimited format (tsv) and market matrix format (mtx) 
-on this github repo under `compass/Resources/Test-Data <https://github.com/YosefLab/Compass/tree/compass_v2/compass/Resources/Test-Data>`__.
+on this github repo under `compass/Resources/Test-Data <https://github.com/wagnerlab-berkeley/Compass/tree/master/compass/Resources/Test-Data>`__.
 
 These files will exist locally as well under the Compass install directory which can be found by running:
 
@@ -82,7 +82,7 @@ before running Compass with:
     Therefore, Compass can also be stopped and restarted after it is done processing a subset of samples 
     so long as the _tmp directory is still there.
 
-For an in-depth explanation of the various Compass parameters, see `here <https://compass-sc.readthedocs.io/en/latest/settings.html>`__.
+For an in-depth explanation of the various Compass parameters, see `here <https://compass-wagnerlab.readthedocs.io/en/latest/settings.html>`__.
 
 Output
 *******
@@ -96,7 +96,7 @@ Below is an example of the output matrix:
 
 
 To get more context on what the RECON2 reaction identifiers are, you can visit `virtual metabolic human <https://www.vmh.life/#home>`__ 
-or the `resources directory <https://github.com/YosefLab/Compass/tree/compass_v2/compass/Resources/Recon2_export>`__ 
+or the `resources directory <https://github.com/wagnerlab-berkeley/Compass/tree/master/compass/Resources/Recon2_export>`__ 
 of Compass where there are several .csv files which include information on the reactions in Recon2.
 
 If you are using Human1 or Mouse1, you can visit `Metabolic Atlas <https://metabolicatlas.org/>`__ to view the metabolic network.
@@ -111,5 +111,5 @@ Postprocessing
 Once Compass has finished running, we apply several steps of postprocessing to the data. 
 More specifically, postprocessing converts reaction penalties (where high values correspond to low likelihood reactions) 
 to reaction scores (where high values correspond to likely reactions). 
-Refer to `this page <https://compass-sc.readthedocs.io/en/latest/notebooks/postprocessing.html>`__ 
+Refer to `this page <https://compass-wagnerlab.readthedocs.io/en/latest/notebooks/postprocessing.html>`__ 
 of the documentation for an example notebook.

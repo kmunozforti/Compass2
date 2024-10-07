@@ -10,14 +10,14 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE.md"}
 authors = [
-    {name = "Yosef Lab"},
+    {name = "Wagner Lab"},
 ]
 maintainers = [
     {name = "Charles Chien", email = "charleschien101@gmail.com"},
 ]
-urls.Documentation = "https://compass.readthedocs.io/"
-urls.Source = "https://github.com/YosefLab/Compass"
-urls.Home-page = "https://github.com/YosefLab/Compass"
+urls.Documentation = "https://compass-wagnerlab.readthedocs.io/"
+urls.Source = "https://github.com/wagnerlab-berkeley/Compass"
+urls.Home-page = "https://github.com/wagnerlab-berkeley/Compass"
 dependencies = [
     'numpy>=1.12',
     'pandas>=0.20',

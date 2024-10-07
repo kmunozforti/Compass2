@@ -29,8 +29,8 @@ setup(
         'anndata',
         'gurobipy>=11.0.0'],
 
-    author="David DeTomaso",
-    author_email="david.detomaso@berkeley.edu",
+    author="Charles Chien",
+    author_email="charleschien101@gmail.com",
     description="Metabolic Flux Balance Analysis",
     keywords="",
     url=""

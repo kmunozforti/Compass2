@@ -87,7 +87,7 @@ Output Settings
    Note that ``--select-reactions`` and ``--select-subsystems`` fundamentally differ from **Module-Compass** in the 
    way the underlying network is constructed. **If you are only interested in certain subsystems, we strongly recommend 
    you use Module-Compass** instead of ``--select-reactions`` or ``--select-subsystems``. Please refer to 
-   `this section <https://compass-sc.readthedocs.io/en/latest/module_compass.html>`__ of the documentation to learn more.
+   `this section <https://compass-wagnerlab.readthedocs.io/en/latest/module_compass.html>`__ of the documentation to learn more.
 
 Module-Compass Settings
 ************************
@@ -95,7 +95,7 @@ Module-Compass Settings
 To support running COMPASS on a subset of the network, we hereby provide Module-Compass, 
 an algorithm that treats user-defined meta-subsystems as individual networks 
 but still provides the necessary context to ensure that this simplification of the network is reasonable.
-If you would like to use Module-Compass, please refer to `this section <https://compass-sc.readthedocs.io/en/latest/module_compass.html>`__ 
+If you would like to use Module-Compass, please refer to `this section <https://compass-wagnerlab.readthedocs.io/en/latest/module_compass.html>`__ 
 of the documentation.
 
 Metabolic Model Settings
@@ -139,7 +139,7 @@ Turbo-Compass Settings
 ***********************
 
 Turbo-Compass is an implementation of Compass that allows for faster runtime at the expense of accuracy. 
-If you would like to use Turbo-Compass, please refer to `this section <https://compass-sc.readthedocs.io/en/latest/turbo_compass.html>`__ 
+If you would like to use Turbo-Compass, please refer to `this section <https://compass-wagnerlab.readthedocs.io/en/latest/turbo_compass.html>`__ 
 of the documentation.
 
 Penalty Settings
@@ -243,7 +243,7 @@ Microcluster Settings
    
    To reduce runtime, we recommend that the user perform pseudobulking on the data, i.e. aggregation of the expression values
    from a group of cells with shared characteristics, such as cells from the same patient, replicate, cell type, etc. 
-   We provide a `tutorial on pseudobulking <https://compass-sc.readthedocs.io/en/latest/notebooks/pseudobulk.html>`__  
+   We provide a `tutorial on pseudobulking <https://compass-wagnerlab.readthedocs.io/en/latest/notebooks/pseudobulk.html>`__  
    but keep in mind that this process is highly dependent on the experiments performed to generate the dataset 
    and we ultimately leave this to the discretion of the user.
 
