@@ -493,10 +493,6 @@ def compass_reactions(model, gp_model, reaction_penalties, perf_log=None, args =
         #r.id is a unidirectional identifier (ending with _pos or _neg suffix --> we remove it and compare to the undirected reaction id)
         reactions = [r for r in reactions if (str(r.id)[:-4] in selected_reaction_ids or str(r.id) in selected_reaction_ids)]
 
-    
-    if args['save_argmaxes']:
-        argmaxes_order = []
-        argmaxes = []
 
     for reaction in tqdm(reactions, file=sys.stderr):
 
@@ -555,16 +551,13 @@ def compass_reactions(model, gp_model, reaction_penalties, perf_log=None, args =
                 #if hasattr(problem.solution.get_quality_metrics(),'kappa'):
                    #perf_log['kappa'][reaction.id] = problem.solution.get_quality_metrics().kappa
 
-            if args['save_argmaxes']:
-                all_vars = gp_model.getVars()
-                values = gp_model.getAttr("X", all_vars)
-                argmaxes.append(np.array(values))
-                argmaxes_order.append(reaction.id)
-
             #value = gp_model.ObjVal
             global_state.set_current_reaction_id(reaction.id)
             value = optimize_model_wrapper(gp_model)
             reaction_scores[reaction.id] = value
+
+            if args['save_argmaxes']:
+                gp_model.write(os.path.join(args['save_argmaxes_dir'], f'{reaction.id}.sol'))
 
             # Remove Constraint
             constr = gp_model.getConstrByName('REACTION_OPT')
@@ -576,12 +569,6 @@ def compass_reactions(model, gp_model, reaction_penalties, perf_log=None, args =
 
             partner_var = gp_model.getVarByName(partner_id)
             partner_var.setAttr('ub', old_partner_ub)
-
-    if args['save_argmaxes']:
-        argmaxes = np.vstack(argmaxes)
-        np.save(os.path.join(args['save_argmaxes_dir'],'argmaxes.npy'), argmaxes)
-        argmaxes_order = np.array(argmaxes_order)
-        np.save(os.path.join(args['save_argmaxes_dir'],'argmaxes_order.npy'), argmaxes_order)
 
     return reaction_scores
 
@@ -596,7 +583,10 @@ def initialize_gurobi_model(model, credentials, num_threads=1, lpmethod=-1, adv=
     """
 
     # Create the Gurobi model
-    env = gp.Env(params=credentials)
+    if credentials['WLSACCESSID'] is not None and credentials['WLSSECRET'] is not None and credentials['LICENSEID'] != -1:
+        env = gp.Env(params=credentials)
+    else:
+        env = gp.Env()
     gp_model = gp.Model(env=env)
 
     # Set Parameters for the Gurobi model

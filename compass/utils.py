@@ -175,6 +175,9 @@ def read_metadata(model_name):
 
 def parse_gurobi_license_file(file_path):
     credentials = {}
+    credentials['WLSACCESSID'] = None
+    credentials['WLSSECRET'] = None
+    credentials['LICENSEID'] = -1
 
     with open(file_path, 'r') as file:
         for line in file:
