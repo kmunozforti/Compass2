@@ -1527,6 +1527,11 @@ def _parallel_map_fun(sample_name, i, args, model_name=None, temp_dir=None, meta
 
         out_file = os.path.join(sample_dir, 'out.log')
         err_file = os.path.join(sample_dir, 'err.log')
+
+        # Re-initializing selected reactions for each cell since multiprocessing on some machines clears global objects
+        global_state.init_selected_reactions_for_each_cell(
+            args.get('selected_reactions_for_each_cell', None))
+
         with open(out_file, 'w') as fout, open(err_file, 'w') as ferr:
             stdout_bak = sys.stdout
             stderr_bak = sys.stderr
