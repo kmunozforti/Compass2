@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import sys
 import subprocess as sp
+import traceback
 import logging
 import datetime
 import json
@@ -1487,10 +1488,26 @@ def runCompassParallel(args, model_name=None, temp_dir=None, output_dir=None, me
 
     arguments = [(str(sample_names[i]), i) for i in range(n_samples)]
 
+    results = []
     for argument in arguments:
-        pool.apply_async(partial_map_fun, args=argument, callback=lambda _: pbar.update())
+        res = pool.apply_async(
+            partial_map_fun, 
+            args=argument, 
+            callback=lambda _: pbar.update()
+        )
+        results.append(res)
 
     pool.close()
+
+    try:
+        for res in results:
+            res.get()
+    except Exception as e:
+        logger.info(f"Error encountered: {e}", exc_info=True)
+        pool.terminate()
+        pool.join()
+        raise
+
     pool.join()
 
     if temp_dir is None:
@@ -1559,15 +1576,13 @@ def _parallel_map_fun(sample_name, i, args, model_name=None, temp_dir=None, meta
                     preprocess_cache_dir=preprocess_cache_dir
                 )
             except Exception as e:
+                traceback.print_exc(file=ferr)
+                ferr.flush()
                 sys.stdout = stdout_bak
                 sys.stderr = stderr_bak
-
-                # Necessary because cplex exceptions can't be pickled
-                #   and can't transfer from subprocess to main process
-                if 'cplex' in str(type(e)).lower():
-                    raise(Exception(str(e)))
-                else:
-                    raise(e)
+                raise e
+            finally:
+                sys.stdout, sys.stderr = stdout_bak, stderr_bak
 
             end_time = datetime.datetime.now()
             logger.debug("\nElapsed Time: {}\n".format(end_time-start_time))
@@ -1780,5 +1795,4 @@ def precacheCompass(args, model_name=None, metabolic_model_dir=MODEL_DIR, prepro
 
 
 if __name__ == '__main__':
-    multiprocessing.set_start_method('fork')
     entry()
