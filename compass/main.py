@@ -4,6 +4,7 @@ Entry points for compass
 from __future__ import absolute_import, print_function, division
 import argparse
 import os
+import shutil
 import multiprocessing
 import numpy as np
 import pandas as pd
@@ -485,11 +486,11 @@ def entry():
         print('A Gurobi license is required to run Compass. Run Compass again with \'--set-license <PATH_TO_LICENSE>\' to save license.')
         return
     elif args['set_license']:
-        credentials = utils.parse_gurobi_license_file(args['set_license'])
-        with open(os.path.join(globals.LICENSE_DIR, 'gurobi.lic'), 'w') as file:
-            file.write(f"WLSACCESSID={credentials['WLSACCESSID']}\n")
-            file.write(f"WLSSECRET={credentials['WLSSECRET']}\n")
-            file.write(f"LICENSEID={credentials['LICENSEID']}\n")
+
+        src_license_path = args['set_license']
+        dest_license_path = os.path.join(globals.LICENSE_DIR, 'gurobi.lic')
+    
+        shutil.copy(src_license_path, dest_license_path)
 
         if os.path.exists(os.path.join(globals.LICENSE_DIR, 'gurobi.lic')):
             print('Successfully saved Gurobi license')

@@ -175,18 +175,17 @@ def read_metadata(model_name):
 
 def parse_gurobi_license_file(file_path):
     credentials = {}
-    credentials['WLSACCESSID'] = None
-    credentials['WLSSECRET'] = None
-    credentials['LICENSEID'] = -1
 
     with open(file_path, 'r') as file:
         for line in file:
             line = line.strip()
-            if line.startswith("WLSACCESSID="):
-                credentials['WLSACCESSID'] = line.split('=')[1]
-            elif line.startswith("WLSSECRET="):
-                credentials['WLSSECRET'] = line.split('=')[1]
-            elif line.startswith("LICENSEID="):
-                credentials['LICENSEID'] = int(line.split('=')[1])
+
+            if '=' in line:
+                key, val = line.split('=')
+                try:
+                    val = int(val)
+                except:
+                    pass
+                credentials[key] = val
 
     return credentials

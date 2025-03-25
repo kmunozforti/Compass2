@@ -583,10 +583,14 @@ def initialize_gurobi_model(model, credentials, num_threads=1, lpmethod=-1, adv=
     """
 
     # Create the Gurobi model
-    if credentials['WLSACCESSID'] is not None and credentials['WLSSECRET'] is not None and credentials['LICENSEID'] != -1:
+
+    # Gurobi WLS License
+    if 'WLSACCESSID' in credentials and 'WLSSECRET' in credentials and 'LICENSEID' in credentials:
         env = gp.Env(params=credentials)
+    # Gurobi Named-User License
     else:
         env = gp.Env()
+    
     gp_model = gp.Model(env=env)
 
     # Set Parameters for the Gurobi model
